@@ -1,5 +1,5 @@
 import $ from "jquery";
-import { gsap,Power2 } from "gsap";
+import { gsap } from "gsap";
 
 export default function cursorAnimation() {
     if(typeof window !== 'undefined'){
@@ -67,7 +67,7 @@ export default function cursorAnimation() {
                     duration: 0.3, 
                     x: ((relX - boundingRect.width / 2) / boundingRect.width) * movement,
                     y: ((relY - boundingRect.height / 2) / boundingRect.height) * movement,
-                    ease: Power2.easeOut
+                    ease: "power2.out"
                 });
             }
         

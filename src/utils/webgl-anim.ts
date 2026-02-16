@@ -94,7 +94,7 @@ export function addEvents(webGL: any) {
         gsap.to(webGL.material.uniforms.dispFactor, {
           duration: 1,
           value: 1,
-          ease: "Sine.easeInOut",
+          ease: "sine.inOut",
           onComplete: () => {
             // Arrow function to preserve lexical scope
             webGL.material.uniforms.currentImage.value =
