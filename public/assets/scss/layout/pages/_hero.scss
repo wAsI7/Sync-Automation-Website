@@ -267,14 +267,16 @@
 }
 .tp-hero-3{
     &-ptb{
-        padding-top: 210px;
+        padding-top: 80px;
         padding-bottom: 70px;
-        @media #{$md}{
-            padding-top: 200px;
-        }
         @media #{$xs}{
-            padding-top: 140px;
+            padding-top: 60px;
         }
+    }
+    &-logo-container{
+        position: relative;
+        text-align: center;
+        margin-bottom: 50px;
     }
     &-title{
         font-size: 140px;
@@ -284,6 +286,8 @@
         color: var(--tp-common-black);
         font-family: var(--tp-ff-marcellus);
         margin-bottom: 35px;
+        position: relative;
+        z-index: 1;
         @media #{$lg}{
             font-size: 115px;
         }
@@ -308,29 +312,39 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
-        z-index: -1;
+        transform: translate(-50%, -50%);
+        z-index: 0;
         pointer-events: none;
         & span{
-            height: 480px;
-            width: 460px;
+            height: 576px;
+            width: 552px;
             display: inline-block;
             background-image: url('/assets/img/sync-favicon-bg.png');
             background-position: center;
             background-repeat: no-repeat;
-            background-size: 60%;
-            opacity: 0.06;
+            background-size: 72%;
+            opacity: 0.12;
+            transform-origin: center center;
             @media #{$lg,$md}{
-                height: 400px;
-                width: 400px;
-                background-size: 55%;
+                height: 480px;
+                width: 480px;
+                background-size: 66%;
+                opacity: 0.12;
             }
             @media #{$xs}{
-                height: 300px;
-                width: 300px;
-                background-size: 50%;
+                height: 360px;
+                width: 360px;
+                background-size: 60%;
+                opacity: 0.12;
             }
         }
+    }
+}
+.hero-logo{
+    text-align: center;
+    margin-bottom: 40px;
+    @media #{$xs}{
+        margin-bottom: 30px;
     }
 }
 .tp-hero-4{

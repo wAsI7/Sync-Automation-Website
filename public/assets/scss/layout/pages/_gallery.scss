@@ -85,3 +85,27 @@
     width: auto;
     height: auto;
 }
+.tp-gallery-item {
+    flex: 0 0 auto;
+    & img {
+        width: 400px;
+        height: auto;
+        object-fit: cover;
+        display: block;
+    }
+    @media #{$lg} {
+        & img {
+            width: 350px;
+        }
+    }
+    @media #{$md} {
+        & img {
+            width: 300px;
+        }
+    }
+    @media #{$xs} {
+        & img {
+            width: 250px;
+        }
+    }
+}

@@ -6,15 +6,21 @@ import shape_1 from '@/assets/img/home-03/gallery/gal-shape-1.png';
 import shape_d_1 from '@/assets/img/home-03/gallery/gal-shape-dark-1.png';
 import shape_2 from '@/assets/img/home-03/gallery/gal-shape-2.png';
 import shape_d_2 from '@/assets/img/home-03/gallery/gal-shape-dark-2.png';
-import g_1 from '@/assets/img/home-03/gallery/gal-1.jpg';
-import g_2 from '@/assets/img/home-03/gallery/gal-2.jpg';
-import g_3 from '@/assets/img/home-03/gallery/gal-3.jpg';
-import g_4 from '@/assets/img/home-03/gallery/gal-4.jpg';
-import g_5 from '@/assets/img/home-03/gallery/gal-5.jpg';
 
-
+// New gallery images from 6-products-gallery
 const gallery_images = [
-  g_1, g_2, g_3, g_4, g_5, g_3, g_1, g_2, g_3, g_4, g_5, g_3
+  '/assets/img/6-products-gallery/1.webp',
+  '/assets/img/6-products-gallery/2.webp',
+  '/assets/img/6-products-gallery/3.webp',
+  '/assets/img/6-products-gallery/4.webp',
+  '/assets/img/6-products-gallery/5.webp',
+  '/assets/img/6-products-gallery/6.webp',
+  '/assets/img/6-products-gallery/1.webp',
+  '/assets/img/6-products-gallery/2.webp',
+  '/assets/img/6-products-gallery/3.webp',
+  '/assets/img/6-products-gallery/4.webp',
+  '/assets/img/6-products-gallery/5.webp',
+  '/assets/img/6-products-gallery/6.webp',
 ]
 
 const imgStyle:CSSProperties = {height: "auto"};
@@ -41,7 +47,10 @@ export default function GalleryOne() {
 
                     <div key={i}>
                       <div className="tp-gallery-item mr-30">
-                        <Image src={g} alt="gallery-img" style={{ height: 'auto' }} />
+                        <img 
+                          src={g} 
+                          alt="gallery-img" 
+                        />
                       </div>
                     </div>
                   ))}
