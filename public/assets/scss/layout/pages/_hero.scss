@@ -310,16 +310,25 @@
         left: 50%;
         transform: translate(-50%,-50%);
         z-index: -1;
+        pointer-events: none;
         & span{
             height: 480px;
             width: 460px;
             display: inline-block;
-            filter: blur(35px);
-            border-radius: 62% 47% 82% 35%/45% 45% 80% 66%;
-            background: linear-gradient(220deg, rgba(148, 254, 98, 0.50) 0.77%, rgba(255, 226, 122, 0.50) 55.40%, rgba(234, 94, 94, 0.50) 100%);
+            background-image: url('/assets/img/sync-favicon-bg.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 60%;
+            opacity: 0.06;
             @media #{$lg,$md}{
                 height: 400px;
                 width: 400px;
+                background-size: 55%;
+            }
+            @media #{$xs}{
+                height: 300px;
+                width: 300px;
+                background-size: 50%;
             }
         }
     }

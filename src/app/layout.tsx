@@ -68,8 +68,15 @@ const marcellus = Marcellus({
 });
 
 export const metadata: Metadata = {
-  title: "Sync Automation - by Futura",
-  description: "Intelligent Manufacturing Solutions. Creative agency & portfolio.",
+  title: "Sync Automation – by Futura",
+  description: "Intelligence, designed into space.",
+  openGraph: {
+    title: "Sync Automation – by Futura",
+    description: "Intelligence, designed into space.",
+    url: "https://v0-sync-automation-website.vercel.app/",
+    siteName: "Sync Automation",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
