@@ -1,24 +1,30 @@
 import $ from "jquery";
-import { gsap, Power2 } from "gsap";
+import { gsap } from "gsap";
+
 function hoverBtn() {
+  $(".tp-hover-btn").on("mouseenter", function (e: any) {
+    const offset = $(this).offset();
+    if (!offset) return;
+    
+    const x = e.pageX - offset.left;
+    const y = e.pageY - offset.top;
 
-  $('.tp-hover-btn').on('mouseenter', function (e: any) {
-    let x = e.pageX - $(this).offset()!.left;
-    let y = e.pageY - $(this).offset()!.top;
-
-    $(this).find('.tp-btn-circle-dot').css({
+    $(this).find(".tp-btn-circle-dot").css({
       top: y,
-      left: x
+      left: x,
     });
   });
 
-  $('.tp-hover-btn').on('mouseout', function (e: any) {
-    let x = e.pageX - $(this).offset()!.left;
-    let y = e.pageY - $(this).offset()!.top;
+  $(".tp-hover-btn").on("mouseout", function (e: any) {
+    const offset = $(this).offset();
+    if (!offset) return;
+    
+    const x = e.pageX - offset.left;
+    const y = e.pageY - offset.top;
 
-    $(this).find('.tp-btn-circle-dot').css({
+    $(this).find(".tp-btn-circle-dot").css({
       top: y,
-      left: x
+      left: x,
     });
   });
 
@@ -35,24 +41,29 @@ function hoverBtn() {
 
     function parallaxIt(e: any, target: any, movement: any) {
       const $this: any = $(btn);
-      const relX = e.pageX - $this.offset().left;
-      const relY = e.pageY - $this.offset().top;
+      const offset = $this.offset();
+      if (!offset) return;
+      
+      const relX = e.pageX - offset.left;
+      const relY = e.pageY - offset.top;
 
-      gsap.to(target, 1, {
+      gsap.to(target, {
+        duration: 1,
         x: ((relX - $this.width() / 2) / $this.width()) * movement,
         y: ((relY - $this.height() / 2) / $this.height()) * movement,
-        ease: Power2.easeOut,
+        ease: "power2.out",
       });
     }
     $(btn).mouseleave(function (e) {
-      gsap.to(hoverBtnItem[i], 1, {
+      gsap.to(hoverBtnItem[i], {
+        duration: 1,
         x: 0,
         y: 0,
-        ease: Power2.easeOut,
+        ease: "power2.out",
       });
     });
   });
-};
+}
 
 
 export {
