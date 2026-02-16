@@ -17,11 +17,8 @@ export default function HeroBannerFour() {
                 <span className="tp-reveal-line">Intelligence meets</span>
                 <span className="tp-reveal-line">design</span>
               </h4>
-              <p className="tp-hero-3-subline tp_reveal_anim">
-                Redefining smart home control with precision-engineered automation
-              </p>
               <span className="tp-hero-3-category tp_reveal_anim">
-                CONTROL SYSTEMS / SMART AUTOMATION / ARCHITECTURAL INTEGRATION
+                Redefining smart home control with precision-engineered automation
               </span>
               <span className="tp-btn-black-2" role="button">
                 Explore Products{" "}
