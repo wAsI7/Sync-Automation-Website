@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "@/plugins";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function VideoFullwidthSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -36,7 +36,7 @@ export default function VideoFullwidthSection() {
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => {
+      ScrollTrigger.getAll().forEach((trigger: ScrollTrigger) => {
         if (trigger.vars.trigger === section) {
           trigger.kill();
         }
