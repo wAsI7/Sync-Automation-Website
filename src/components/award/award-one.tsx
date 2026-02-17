@@ -16,42 +16,42 @@ const award_data = [
     id: 1,
     img: a_1,
     subtitle: "x2",
-    title: "FWA, Site of the Day",
+    title: "Lorem Ipsum Dolor Sit Amet",
     date: "Jun 24, 2024",
   },
   {
     id: 2,
     img: a_2,
     subtitle: "x3",
-    title: "Awwwards Interior Excellence",
+    title: "Consectetur Adipiscing Elit Award",
     date: "Nov 24, 2022",
   },
   {
     id: 3,
     img: a_3,
     subtitle: "x1",
-    title: "Loki boundary pushing year in Review 2022",
+    title: "Sed Do Eiusmod Tempor Incididunt",
     date: "May 24, 2012",
   },
   {
     id: 4,
     img: a_4,
     subtitle: "x1",
-    title: "The New Sync Automation Tools Website is Live.",
+    title: "Ut Labore et Dolore Magna",
     date: "Sep 10, 2021",
   },
   {
     id: 5,
     img: a_5,
     subtitle: "x2",
-    title: "Digital Agencies Worldwide",
+    title: "Aliqua Enim ad Minim Veniam",
     date: "Jun 12, 2021",
   },
   {
     id: 6,
     img: a_6,
     subtitle: "x1",
-    title: "FWA, Site of the Day",
+    title: "Quis Nostrud Exercitation Ullamco",
     date: "Aug 18, 2022",
   },
 ];
@@ -71,7 +71,7 @@ const AwardOne = ({cls="pt-125 pb-125",abStyle=false}: IProps) => {
             {!abStyle && (
               <div className="tp-award-title-box">
                 <h4 className="tp-section-title tp-char-animation">
-                  Awards <br /> <span>& Recognitions</span>
+                  Lorem Ipsum <br /> <span>& Dolor Sit</span>
                 </h4>
               </div>
             )}

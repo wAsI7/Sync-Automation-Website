@@ -24,6 +24,9 @@ import ProjectFour from "@/components/project/project-four";
 // Section 5 - Text animation from home-4
 import AboutThree from "@/components/about/about-three";
 
+// Section - Full Width Video Section
+import VideoFullwidthSection from "@/components/video/video-fullwidth-section";
+
 // Section 6 - Services from home-3
 import ServiceThree from "@/components/service/service-three";
 
@@ -91,6 +94,9 @@ export default function CustomHomePage() {
             <section className="tp-about-three-section">
               <AboutThree />
             </section>
+
+            {/* SECTION - Full Width Video Section */}
+            <VideoFullwidthSection />
 
             {/* SECTION 4 - Awards & Recognitions from home-1 */}
             <section className="tp-award-section">
