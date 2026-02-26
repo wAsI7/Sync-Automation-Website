@@ -97,13 +97,8 @@ export default function CustomHomePage() {
             {/* SECTION 3 - Scroll Controlled Video */}
             <ScrollVideoSection />
 
-            {/* SECTION 4 - Awards & Recognitions from home-1 */}
-            <section className="tp-award-section">
-              <AwardOne cls="pt-125 pb-125" />
-            </section>
-
-            {/* SECTION 5 - Project cards from home-4 */}
-            <section className="tp-projects-section">
+            {/* SECTION 4 - Project cards from home-4 */}
+            <section className="tp-projects-section sync-black-section">
               <ProjectFour />
             </section>
 
@@ -117,7 +112,12 @@ export default function CustomHomePage() {
               <AboutOne />
             </section>
 
-            {/* SECTION 8 - Gallery heading */}
+            {/* SECTION 8 - Awards & Recognitions from home-1 */}
+            <section className="tp-award-section">
+              <AwardOne cls="pt-125 pb-125" />
+            </section>
+
+            {/* SECTION 9 - Gallery heading */}
             <section
               className="pt-160 pb-0 position-relative"
               style={{ zIndex: 2 }}
@@ -134,7 +134,7 @@ export default function CustomHomePage() {
               </div>
             </section>
 
-            {/* SECTION 9 - Gallery section */}
+            {/* SECTION 10 - Gallery section */}
             <section className="tp-gallery-section pt-130 pb-130">
               <GalleryOne />
             </section>

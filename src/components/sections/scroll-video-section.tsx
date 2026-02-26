@@ -12,58 +12,37 @@ export default function ScrollVideoSection() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
-    const sectionEl = sectionRef.current;
-    const pinEl = pinRef.current;
-    const videoEl = videoRef.current;
+    if (!sectionRef.current || !pinRef.current || !videoRef.current) return;
 
-    if (!sectionEl || !pinEl || !videoEl) return;
+    const section = sectionRef.current;
+    const pin = pinRef.current;
+    const video = videoRef.current;
 
     const ctx = gsap.context(() => {
-      let scrollTriggerInstance: ScrollTrigger | null = null;
-
-      const createScrollTrigger = () => {
-        if (!videoEl.duration || isNaN(videoEl.duration)) {
-          return;
-        }
-
-        if (scrollTriggerInstance) {
-          scrollTriggerInstance.kill();
-        }
-
-        scrollTriggerInstance = ScrollTrigger.create({
-          trigger: sectionEl,
-          scroller: "#smooth-content",
+      const initScrollTrigger = () => {
+        ScrollTrigger.create({
+          trigger: section,
           start: "top top",
           end: "bottom bottom",
-          scrub: 1,
-          pin: pinEl,
+          scrub: 3, // slow cinematic scrub
+          pin: pin,
           anticipatePin: 1,
+          invalidateOnRefresh: true,
           onUpdate: (self) => {
-            if (!videoEl.duration || isNaN(videoEl.duration)) return;
-            videoEl.currentTime = self.progress * videoEl.duration;
+            if (!video.duration) return;
+            video.currentTime = video.duration * self.progress;
           },
         });
       };
 
-      // Initialize when metadata is available so duration is known
-      const handleLoadedMetadata = () => {
-        createScrollTrigger();
-      };
-
-      videoEl.addEventListener("loadedmetadata", handleLoadedMetadata);
-
-      // If metadata is already loaded, create immediately
-      if (videoEl.readyState >= 1) {
-        createScrollTrigger();
+      if (video.readyState >= 1) {
+        initScrollTrigger();
+      } else {
+        video.addEventListener("loadedmetadata", initScrollTrigger, {
+          once: true,
+        });
       }
-
-      return () => {
-        videoEl.removeEventListener("loadedmetadata", handleLoadedMetadata);
-        if (scrollTriggerInstance) {
-          scrollTriggerInstance.kill();
-        }
-      };
-    }, sectionEl);
+    });
 
     return () => {
       ctx.revert();
@@ -74,7 +53,12 @@ export default function ScrollVideoSection() {
     <section
       ref={sectionRef}
       className="scroll-video-section"
-      style={{ minHeight: "400vh", position: "relative" }}
+      style={{
+        minHeight: "600vh",
+        position: "relative",
+        backgroundColor: "#000000",
+        marginBottom: "-2px",
+      }}
     >
       {/* Pinned container handled by ScrollTrigger */}
       <div
@@ -95,10 +79,10 @@ export default function ScrollVideoSection() {
           style={{
             position: "absolute",
             inset: 0,
-            zIndex: 0,
             width: "100%",
             height: "100%",
             objectFit: "cover",
+            zIndex: 0,
             pointerEvents: "none",
           }}
         />

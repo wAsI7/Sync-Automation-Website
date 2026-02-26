@@ -3862,3 +3862,29 @@
         }
     }
 }
+
+.sync-black-section {
+    background-color: #000000 !important;
+}
+
+.sync-black-section .container {
+    background-color: transparent !important;
+}
+
+.sync-black-section::before,
+.sync-black-section::after {
+    display: none !important;
+}
+
+.sync-project-black {
+    background: #000000 !important;
+}
+
+.sync-project-black::before,
+.sync-project-black::after {
+    display: none !important;
+}
+
+.sync-project-black .container {
+    background: transparent !important;
+}
