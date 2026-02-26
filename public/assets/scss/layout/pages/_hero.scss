@@ -266,6 +266,9 @@
     }
 }
 .tp-hero-3{
+    &-area{
+        position: relative;
+    }
     &-ptb{
         padding-top: 80px;
         padding-bottom: 70px;
@@ -288,6 +291,7 @@
         margin-bottom: 35px;
         position: relative;
         z-index: 1;
+        white-space: nowrap;
         @media #{$lg}{
             font-size: 115px;
         }
@@ -346,6 +350,34 @@
     @media #{$xs}{
         margin-bottom: 30px;
     }
+}
+.tp-hero-3-area .hero-logo{
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+.hero-section{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-content-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    visibility: hidden;
+}
+.tp-hero-3-area.tp-hero-3-ptb:has(.hero-section){
+    padding-top: 0;
+    padding-bottom: 0;
 }
 .tp-hero-4{
     &-content-wrap{
