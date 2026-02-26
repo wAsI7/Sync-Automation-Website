@@ -8,6 +8,7 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 
 import Wrapper from "@/layouts/wrapper";
+import SyncFooter from "@/components/layout/sync-footer";
 
 // Section 1 - Hero from home-4
 import HeroBannerFour from "@/components/hero-banner/hero-banner-four";
@@ -24,14 +25,14 @@ import ProjectFour from "@/components/project/project-four";
 // Section 5 - Text animation from home-4
 import AboutThree from "@/components/about/about-three";
 
-// Section - Full Width Video Section
-import VideoFullwidthSection from "@/components/video/video-fullwidth-section";
-
 // Section 6 - Services from home-3
 import ServiceThree from "@/components/service/service-three";
 
 // Section 7 - Awards & Recognitions from home-1
 import AwardOne from "@/components/award/award-one";
+
+// Final CTA from home-4
+import ContactOne from "@/components/contact/contact-one";
 
 // Animations
 import { textInvert } from "@/utils/text-invert";
@@ -41,6 +42,7 @@ import { aboutAnim } from "@/utils/about-anim";
 import { serviceMarqueAnim } from "@/utils/scroll-marque";
 import { bounceAnimation, charAnimation } from "@/utils/title-animation";
 import { projectThreeAnimation } from "@/utils/project-anim";
+import { ctaAnimation } from "@/utils/cta-anim";
 
 export default function CustomHomePage() {
   useScrollSmooth();
@@ -66,6 +68,7 @@ export default function CustomHomePage() {
 
       // Section 5: ProjectFour horizontal image cards (pin + scrub animation)
       projectThreeAnimation();
+      ctaAnimation();
 
       // Single refresh after layout and GSAP are ready (avoids double refresh + layout thrash)
       requestAnimationFrame(() => {
@@ -85,18 +88,10 @@ export default function CustomHomePage() {
               <HeroBannerFour />
             </section>
 
-            {/* SECTION 2 - Horizontal scrolling image cards (beach/cube/figure) from home-4 */}
-            <section className="tp-gallery-section pt-130 pb-130">
-              <GalleryOne />
-            </section>
-
-            {/* SECTION 3 - "What we do" / We tell visual stories from home-4 */}
+            {/* SECTION 2 - "What we do" / We tell visual stories from home-4 */}
             <section className="tp-about-three-section">
               <AboutThree />
             </section>
-
-            {/* SECTION - Full Width Video Section */}
-            <VideoFullwidthSection />
 
             {/* SECTION 4 - Awards & Recognitions from home-1 */}
             <section className="tp-award-section">
@@ -117,7 +112,34 @@ export default function CustomHomePage() {
             <section className="tp-about-section">
               <AboutOne />
             </section>
+
+            {/* SECTION 8 - Gallery heading */}
+            <section
+              className="pt-160 pb-0 position-relative"
+              style={{ zIndex: 2 }}
+            >
+              <div className="container">
+                <div
+                  className="tp-section-title-wrapper text-center"
+                  style={{ marginBottom: "-60px" }}
+                >
+                  <h2 className="tp-section-title">
+                    Gallery
+                  </h2>
+                </div>
+              </div>
+            </section>
+
+            {/* SECTION 9 - Gallery section */}
+            <section className="tp-gallery-section pt-130 pb-130">
+              <GalleryOne />
+            </section>
+
+            {/* contact area start */}
+            <ContactOne />
+            {/* contact area end */}
           </main>
+          <SyncFooter />
         </div>
       </div>
     </Wrapper>

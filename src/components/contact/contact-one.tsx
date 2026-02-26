@@ -15,20 +15,16 @@ export default function ContactOne() {
               <span>about it</span>
             </h4>
             <p className="tp_fade_bottom">
-              We will collaborate to find the right answer and bring progress to
-              your business and to the world.
+              We engineer seamless smart automation experiences designed for refined modern homes.
             </p>
-            <div className="tp-cta-icon">
-              <Image src={cta} alt="cta-img" />
-            </div>
             <div className="tp-cta-btn-box">
-              <Link className="tp-btn-zikzak p-relative" href="/contact">
+              <a href="#" className="tp-btn-zikzak p-relative">
                 <span className="zikzak-content">
                   Get <br /> In Touch
                   <RightArrow clr="#19191A" />
                 </span>
                 <ProjectShape />
-              </Link>
+              </a>
             </div>
           </div>
         </div>
