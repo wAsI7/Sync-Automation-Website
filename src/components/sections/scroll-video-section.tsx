@@ -32,6 +32,7 @@ export default function ScrollVideoSection() {
 
         scrollTriggerInstance = ScrollTrigger.create({
           trigger: sectionEl,
+          scroller: "#smooth-content",
           start: "top top",
           end: "bottom bottom",
           scrub: 1,
@@ -56,27 +57,6 @@ export default function ScrollVideoSection() {
         createScrollTrigger();
       }
 
-      // Feature items fade in progressively on scroll
-      const features = gsap.utils.toArray<HTMLElement>(".scroll-video-feature");
-
-      features.forEach((feature) => {
-        gsap.fromTo(
-          feature,
-          { autoAlpha: 0, y: 40 },
-          {
-            autoAlpha: 1,
-            y: 0,
-            ease: "none",
-            scrollTrigger: {
-              trigger: feature,
-              start: "top 80%",
-              end: "top 40%",
-              scrub: true,
-            },
-          }
-        );
-      });
-
       return () => {
         videoEl.removeEventListener("loadedmetadata", handleLoadedMetadata);
         if (scrollTriggerInstance) {
@@ -94,7 +74,7 @@ export default function ScrollVideoSection() {
     <section
       ref={sectionRef}
       className="scroll-video-section"
-      style={{ minHeight: "200vh", position: "relative" }}
+      style={{ minHeight: "400vh", position: "relative" }}
     >
       {/* Pinned container handled by ScrollTrigger */}
       <div
@@ -108,7 +88,7 @@ export default function ScrollVideoSection() {
         {/* Absolute video layer behind content */}
         <video
           ref={videoRef}
-          src="/assets/video/sync-showcase.mp4"
+          src="/video/ambience-control.mp4"
           muted
           playsInline
           preload="metadata"
@@ -122,61 +102,6 @@ export default function ScrollVideoSection() {
             pointerEvents: "none",
           }}
         />
-      </div>
-
-      {/* Foreground content that scrolls over the video */}
-      <div
-        className="scroll-video-content"
-        style={{
-          position: "relative",
-          zIndex: 2,
-        }}
-      >
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-xl-8 col-lg-9">
-              <div className="scroll-video-intro text-center">
-                <h2 className="tp-section-title-60">
-                  Immerse into intelligent living
-                </h2>
-                <p className="tp_fade_bottom">
-                  Scroll to explore how Sync Automation orchestrates lighting,
-                  climate, and security into one seamless experience.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="row justify-content-center mt-60">
-            <div className="col-xl-4 col-md-6">
-              <div className="scroll-video-feature">
-                <h3 className="tp-section-title-24">Adaptive Ambience</h3>
-                <p>
-                  Lighting scenes that adjust automatically with time of day,
-                  presence, and mood.
-                </p>
-              </div>
-            </div>
-            <div className="col-xl-4 col-md-6">
-              <div className="scroll-video-feature">
-                <h3 className="tp-section-title-24">Silent Climate Control</h3>
-                <p>
-                  Precision temperature orchestration that feels natural, not
-                  noticeable.
-                </p>
-              </div>
-            </div>
-            <div className="col-xl-4 col-md-6">
-              <div className="scroll-video-feature">
-                <h3 className="tp-section-title-24">Secure by Design</h3>
-                <p>
-                  Perimeter, access, and presence awareness engineered to
-                  protect without intruding.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
