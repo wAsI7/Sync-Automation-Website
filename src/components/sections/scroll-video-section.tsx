@@ -35,6 +35,16 @@ export default function ScrollVideoSection() {
         });
       };
 
+      // Prime video playback in some browsers (autoplay policies)
+      video
+        .play()
+        .then(() => {
+          video.pause();
+        })
+        .catch(() => {
+          // ignore autoplay rejections; ScrollTrigger will still work
+        });
+
       const onLoadedMetadata = () => {
         initScrollTrigger();
       };
@@ -80,8 +90,9 @@ export default function ScrollVideoSection() {
           ref={videoRef}
           src="/video/ambience-control.mp4"
           muted
+          autoPlay
           playsInline
-          preload="metadata"
+          preload="auto"
           style={{
             position: "absolute",
             inset: 0,
