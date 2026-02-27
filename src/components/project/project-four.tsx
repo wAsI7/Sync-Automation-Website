@@ -68,7 +68,7 @@ export default function ProjectFour({ style_2 = false }: IProps) {
         )}
         <div className="row">
           <div className="col-xl-12">
-            {project_data.map((item, i) => (
+            {project_data.slice(0, 2).map((item, i) => (
               <div key={item.id} className="tp-project-3-wrap">
                 <div className="row">
                   <div className="col-xl-4 col-lg-4 col-md-6">
