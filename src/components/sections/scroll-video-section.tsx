@@ -23,8 +23,8 @@ export default function ScrollVideoSection() {
         ScrollTrigger.create({
           trigger: section,
           start: "top top",
-          end: "bottom bottom",
-          scrub: 3, // slow cinematic scrub
+          end: "+=400%",
+          scrub: 2,
           pin: pin,
           anticipatePin: 1,
           invalidateOnRefresh: true,
@@ -35,14 +35,20 @@ export default function ScrollVideoSection() {
         });
       };
 
+      const onLoadedMetadata = () => {
+        initScrollTrigger();
+      };
+
       if (video.readyState >= 1) {
         initScrollTrigger();
       } else {
-        video.addEventListener("loadedmetadata", initScrollTrigger, {
-          once: true,
-        });
+        video.addEventListener("loadedmetadata", onLoadedMetadata);
       }
-    });
+
+      return () => {
+        video.removeEventListener("loadedmetadata", onLoadedMetadata);
+      };
+    }, section);
 
     return () => {
       ctx.revert();
