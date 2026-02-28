@@ -2,48 +2,28 @@ import React from "react";
 import Image from "next/image";
 
 // images
-import port_1 from "@/assets/img/home-03/portfolio/port-1.jpg";
-import port_2 from "@/assets/img/home-03/portfolio/port-2.jpg";
-import port_3 from "@/assets/img/home-03/portfolio/port-3.jpg";
-import port_4 from "@/assets/img/home-03/portfolio/port-4.jpg";
-import port_5 from "@/assets/img/home-03/portfolio/port-5.jpg";
-import port_6 from "@/assets/img/home-03/portfolio/port-6.jpg";
-import port_7 from "@/assets/img/home-03/portfolio/port-7.jpg";
-import port_8 from "@/assets/img/home-03/portfolio/port-8.jpg";
+import product_1 from "@/assets/img/home-03/portfolio/product-1.jpg";
+import product_2 from "@/assets/img/home-03/portfolio/product-2.jpg";
+import product_3 from "@/assets/img/home-03/portfolio/product-3.jpg";
+import product_4 from "@/assets/img/home-03/portfolio/product-4.jpg";
 
 // product data
 const project_data = [
   {
     id: 1,
-    img_1: port_1,
-    img_2: port_2,
+    img_1: product_1,
+    img_2: product_2,
     title: "Sync Keypad Pro",
     subtitle: "Multi-zone control with customizable scenes",
     description: "8-button tactile interface · AC, lighting, curtain control · Day/Night presets",
   },
   {
     id: 2,
-    img_1: port_3,
-    img_2: port_4,
+    img_1: product_3,
+    img_2: product_4,
     title: "Sync Display Panel",
     subtitle: "Intelligent climate & automation hub",
     description: "Circular OLED display · Real-time temperature · Touch-sensitive controls",
-  },
-  {
-    id: 3,
-    img_1: port_5,
-    img_2: port_6,
-    title: "Sans Souci Partnership",
-    subtitle: "Luxury automation meets design",
-    description: "Premium installation partner for high-end residential projects",
-  },
-  {
-    id: 4,
-    img_1: port_7,
-    img_2: port_8,
-    title: "Sync Ecosystem",
-    subtitle: "Unified control platform",
-    description: "Complete smart home orchestration from elegant interfaces",
   },
 ];
 
@@ -60,7 +40,7 @@ export default function ProjectFour({ style_2 = false }: IProps) {
             <div className="col-xl-7">
               <div className="tp-project-3-title-box p-relative mb-150">
                 <h4 className="tp-section-title-200 tp_reveal_anim">
-                  Latest <span>Projects</span>
+                  Latest <span>Products</span>
                 </h4>
               </div>
             </div>
@@ -68,7 +48,7 @@ export default function ProjectFour({ style_2 = false }: IProps) {
         )}
         <div className="row">
           <div className="col-xl-12">
-            {project_data.slice(0, 2).map((item, i) => (
+            {project_data.map((item) => (
               <div key={item.id} className="tp-project-3-wrap">
                 <div className="row">
                   <div className="col-xl-4 col-lg-4 col-md-6">

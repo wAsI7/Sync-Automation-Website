@@ -70,7 +70,7 @@ export default function ScrollVideoSection() {
       ref={sectionRef}
       className="scroll-video-section"
       style={{
-        minHeight: "600vh",
+        minHeight: "500vh",
         position: "relative",
         backgroundColor: "#000000",
         marginBottom: "-2px",
