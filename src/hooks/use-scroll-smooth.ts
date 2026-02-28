@@ -25,7 +25,7 @@ export default function useScrollSmooth() {
         wrapper: smoothWrapper,
         content: smoothContent,
         smooth: 2,
-        effects: true,
+        effects: false,
         smoothTouch: 0.1,
         normalizeScroll: false,
         ignoreMobileResize: true,
