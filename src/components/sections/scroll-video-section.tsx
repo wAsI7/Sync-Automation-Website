@@ -93,8 +93,11 @@ export default function ScrollVideoSection() {
         ref={pinRef}
         className="scroll-video-background"
         style={{
-          position: "relative",
+          position: "fixed",
+          inset: 0,
+          width: "100%",
           height: "100vh",
+          zIndex: 1,
         }}
       >
         {/* Absolute video layer behind content */}
