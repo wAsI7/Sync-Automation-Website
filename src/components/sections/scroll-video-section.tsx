@@ -86,6 +86,7 @@ export default function ScrollVideoSection() {
         position: "relative",
         backgroundColor: "#000000",
         marginBottom: "-2px",
+        isolation: "isolate",
       }}
     >
       {/* Pinned container handled by ScrollTrigger */}
@@ -93,8 +94,10 @@ export default function ScrollVideoSection() {
         ref={pinRef}
         className="scroll-video-background"
         style={{
-          position: "relative",
+          position: "sticky",
+          top: 0,
           height: "100vh",
+          zIndex: 0,
         }}
       >
         {/* Absolute video layer behind content */}
