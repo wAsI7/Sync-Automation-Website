@@ -46,8 +46,20 @@ export default function ScrollVideoSection() {
         });
 
       const onLoadedMetadata = () => {
+        console.log("[ScrollVideoSection] Video metadata loaded", {
+          src: video.src,
+          duration: video.duration,
+          readyState: video.readyState,
+        });
         initScrollTrigger();
       };
+
+      // Log and validate video src
+      const videoSrc = video.src || video.getAttribute("src") || "";
+      console.log("[ScrollVideoSection] Video loading status", {
+        src: videoSrc,
+        resolved: Boolean(videoSrc),
+      });
 
       if (video.readyState >= 1) {
         initScrollTrigger();
@@ -93,6 +105,19 @@ export default function ScrollVideoSection() {
           autoPlay
           playsInline
           preload="auto"
+          onError={(e) => {
+            const target = e.currentTarget;
+            console.error("[ScrollVideoSection] Video failed to load", {
+              src: target.src,
+              error: target.error ? { code: target.error.code, message: target.error.message } : null,
+            });
+          }}
+          onLoadedMetadata={() => {
+            console.log("[ScrollVideoSection] Video metadata loaded (element)");
+          }}
+          onLoadStart={() => {
+            console.log("[ScrollVideoSection] Video load started");
+          }}
           style={{
             position: "absolute",
             inset: 0,
