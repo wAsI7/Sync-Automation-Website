@@ -81,6 +81,7 @@ export default function ScrollVideoSection() {
     <section
       ref={sectionRef}
       className="scroll-video-section"
+      data-speed="1"
       style={{
         minHeight: "500vh",
         position: "relative",
