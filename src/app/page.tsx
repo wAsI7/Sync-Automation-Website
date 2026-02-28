@@ -10,7 +10,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 import Wrapper from "@/layouts/wrapper";
 import SyncFooter from "@/components/layout/sync-footer";
 import ScrollVideoSection from "@/components/sections/scroll-video-section";
-
+//new comment
 // Section 1 - Hero from home-4
 import HeroBannerFour from "@/components/hero-banner/hero-banner-four";
 
