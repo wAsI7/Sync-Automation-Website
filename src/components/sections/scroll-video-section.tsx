@@ -37,6 +37,7 @@ export default function ScrollVideoSection() {
           scrub: 2,
           pin: pin,
           anticipatePin: 1,
+          pinType: "transform",
           invalidateOnRefresh: true,
           onUpdate: (self) => {
             if (!video.duration) return;
