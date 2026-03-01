@@ -36,7 +36,6 @@ export default function ScrollVideoSection() {
           end: "+=400%",
           scrub: 0.5,
           pin: pin,
-          anticipatePin: 1,
           pinType: "transform",
           invalidateOnRefresh: true,
           onUpdate: (self) => {
