@@ -19,6 +19,16 @@ export default function ScrollVideoSection() {
     const video = videoRef.current;
 
     const ctx = gsap.context(() => {
+      // Warm-up: force browser to initialize video decoding pipeline for production frame updates
+      video.muted = true;
+      video.playsInline = true;
+      video
+        .play()
+        .then(() => {
+          video.pause();
+        })
+        .catch(() => {});
+
       const initScrollTrigger = () => {
         ScrollTrigger.create({
           trigger: section,
@@ -34,16 +44,6 @@ export default function ScrollVideoSection() {
           },
         });
       };
-
-      // Prime video playback in some browsers (autoplay policies)
-      video
-        .play()
-        .then(() => {
-          video.pause();
-        })
-        .catch(() => {
-          // ignore autoplay rejections; ScrollTrigger will still work
-        });
 
       const onLoadedMetadata = () => {
         console.log("[ScrollVideoSection] Video metadata loaded", {
