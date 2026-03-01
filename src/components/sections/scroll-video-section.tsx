@@ -34,7 +34,7 @@ export default function ScrollVideoSection() {
           trigger: section,
           start: "top top",
           end: "+=400%",
-          scrub: 0.5,
+          scrub: true,
           pin: pin,
           pinType: "transform",
           invalidateOnRefresh: true,
