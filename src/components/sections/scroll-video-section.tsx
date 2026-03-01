@@ -39,6 +39,22 @@ export default function ScrollVideoSection() {
           pin: true,
           pinType: "transform",
           invalidateOnRefresh: true,
+          onEnter: () => {
+            const smoother = ScrollSmoother.get();
+            if (smoother) smoother.paused(true);
+          },
+          onLeave: () => {
+            const smoother = ScrollSmoother.get();
+            if (smoother) smoother.paused(false);
+          },
+          onEnterBack: () => {
+            const smoother = ScrollSmoother.get();
+            if (smoother) smoother.paused(true);
+          },
+          onLeaveBack: () => {
+            const smoother = ScrollSmoother.get();
+            if (smoother) smoother.paused(false);
+          },
           onUpdate: (self) => {
             if (!video.duration) return;
             video.currentTime = video.duration * self.progress;
