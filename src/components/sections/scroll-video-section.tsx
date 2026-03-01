@@ -3,8 +3,9 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "@/plugins";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 export default function ScrollVideoSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -38,6 +39,22 @@ export default function ScrollVideoSection() {
           pin: pin,
           pinType: "transform",
           invalidateOnRefresh: true,
+          onEnter: () => {
+            const smoother = ScrollSmoother.get();
+            if (smoother) smoother.smooth(0.8);
+          },
+          onLeave: () => {
+            const smoother = ScrollSmoother.get();
+            if (smoother) smoother.smooth(2);
+          },
+          onEnterBack: () => {
+            const smoother = ScrollSmoother.get();
+            if (smoother) smoother.smooth(0.8);
+          },
+          onLeaveBack: () => {
+            const smoother = ScrollSmoother.get();
+            if (smoother) smoother.smooth(2);
+          },
           onUpdate: (self) => {
             if (!video.duration) return;
             video.currentTime = video.duration * self.progress;
