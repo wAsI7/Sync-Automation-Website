@@ -36,25 +36,9 @@ export default function ScrollVideoSection() {
           start: "top top",
           end: "+=400%",
           scrub: true,
-          pin: pin,
+          pin: true,
           pinType: "transform",
           invalidateOnRefresh: true,
-          onEnter: () => {
-            const smoother = ScrollSmoother.get();
-            if (smoother) smoother.smooth(0.8);
-          },
-          onLeave: () => {
-            const smoother = ScrollSmoother.get();
-            if (smoother) smoother.smooth(2);
-          },
-          onEnterBack: () => {
-            const smoother = ScrollSmoother.get();
-            if (smoother) smoother.smooth(0.8);
-          },
-          onLeaveBack: () => {
-            const smoother = ScrollSmoother.get();
-            if (smoother) smoother.smooth(2);
-          },
           onUpdate: (self) => {
             if (!video.duration) return;
             video.currentTime = video.duration * self.progress;
@@ -100,7 +84,7 @@ export default function ScrollVideoSection() {
       className="scroll-video-section"
       data-speed="1"
       style={{
-        minHeight: "500vh",
+        height: "100vh",
         position: "relative",
         backgroundColor: "#000000",
         marginBottom: "-2px",
@@ -147,9 +131,6 @@ export default function ScrollVideoSection() {
             objectFit: "cover",
             zIndex: 0,
             pointerEvents: "none",
-            willChange: "transform",
-            transform: "translateZ(0)",
-            backfaceVisibility: "hidden",
           }}
         />
       </div>
