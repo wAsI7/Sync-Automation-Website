@@ -24,7 +24,7 @@ export default function useScrollSmooth() {
       ScrollSmoother.create({
         wrapper: smoothWrapper,
         content: smoothContent,
-        smooth: 2,
+          smooth: 1.2,
         effects: false,
         smoothTouch: 0.1,
         normalizeScroll: false,
