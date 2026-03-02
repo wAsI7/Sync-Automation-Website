@@ -1,124 +1,70 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollSmoother } from "@/plugins";
-
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+import { useGSAP } from "@gsap/react";
 
 export default function ScrollVideoSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
-  const pinRef = useRef<HTMLDivElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  useEffect(() => {
-    if (!sectionRef.current || !pinRef.current || !videoRef.current) return;
+  useGSAP(() => {
+    if (!sectionRef.current || !videoRef.current) return;
 
     const section = sectionRef.current;
-    const pin = pinRef.current;
     const video = videoRef.current;
 
-    const ctx = gsap.context(() => {
-      // Warm-up: force browser to initialize video decoding pipeline for production frame updates
-      video.muted = true;
-      video.playsInline = true;
-      video
-        .play()
-        .then(() => {
-          video.pause();
-        })
-        .catch(() => {});
+    const setupAnimation = async () => {
+      if (!video.duration) return;
 
-      const initScrollTrigger = () => {
-        ScrollTrigger.create({
+      try {
+        await video.play();
+        video.pause();
+        video.currentTime = 0;
+      } catch (e) {
+        // Ignore autoplay blocking errors
+      }
+
+      const videoProxy = { time: 0 };
+
+      gsap.to(videoProxy, {
+        time: video.duration,
+        ease: "none",
+        scrollTrigger: {
           trigger: section,
           start: "top top",
           end: "+=400%",
-          scrub: true,
+          scrub: 0.5,
           pin: true,
-          pinType: "transform",
+          anticipatePin: 1,
           invalidateOnRefresh: true,
-          onEnter: () => {
-            const smoother = ScrollSmoother.get();
-            if (smoother) smoother.paused(true);
-          },
-          onLeave: () => {
-            const smoother = ScrollSmoother.get();
-            if (smoother) smoother.paused(false);
-          },
-          onEnterBack: () => {
-            const smoother = ScrollSmoother.get();
-            if (smoother) smoother.paused(true);
-          },
-          onLeaveBack: () => {
-            const smoother = ScrollSmoother.get();
-            if (smoother) smoother.paused(false);
-          },
-          onUpdate: (self) => {
-            if (!video.duration) return;
-            video.currentTime = video.duration * self.progress;
-          },
-        });
-      };
-
-      const onLoadedMetadata = () => {
-        console.log("[ScrollVideoSection] Video metadata loaded", {
-          src: video.src,
-          duration: video.duration,
-          readyState: video.readyState,
-        });
-        initScrollTrigger();
-      };
-
-      // Log and validate video src
-      const videoSrc = video.src || video.getAttribute("src") || "";
-      console.log("[ScrollVideoSection] Video loading status", {
-        src: videoSrc,
-        resolved: Boolean(videoSrc),
+        },
+        onUpdate: () => {
+          const delta = Math.abs(video.currentTime - videoProxy.time);
+          if (delta > 0.033) {
+            video.currentTime = videoProxy.time;
+          }
+        },
       });
-
-      if (video.readyState >= 1) {
-        initScrollTrigger();
-      } else {
-        video.addEventListener("loadedmetadata", onLoadedMetadata);
-      }
-
-      return () => {
-        video.removeEventListener("loadedmetadata", onLoadedMetadata);
-      };
-    }, section);
-
-    return () => {
-      ctx.revert();
     };
+
+    if (video.readyState >= 1) {
+      setupAnimation();
+    } else {
+      video.addEventListener("loadedmetadata", setupAnimation);
+    }
   }, []);
 
   return (
     <section
       ref={sectionRef}
       className="scroll-video-section"
-      data-speed="1"
       style={{
-        height: "100vh",
         position: "relative",
-        backgroundColor: "#000000",
-        marginBottom: "-2px",
-        isolation: "isolate",
+        backgroundColor: "#000",
       }}
     >
-      {/* Pinned container handled by ScrollTrigger */}
-      <div
-        ref={pinRef}
-        className="scroll-video-background"
-        style={{
-          position: "relative",
-          isolation: "isolate",
-          height: "100vh",
-          zIndex: 0,
-        }}
-      >
-        {/* Absolute video layer behind content */}
+      <div style={{ height: "100vh", position: "relative" }}>
         <video
           ref={videoRef}
           src="/video/ambience-control.mp4"
@@ -133,19 +79,13 @@ export default function ScrollVideoSection() {
               error: target.error ? { code: target.error.code, message: target.error.message } : null,
             });
           }}
-          onLoadedMetadata={() => {
-            console.log("[ScrollVideoSection] Video metadata loaded (element)");
-          }}
-          onLoadStart={() => {
-            console.log("[ScrollVideoSection] Video load started");
-          }}
           style={{
             position: "absolute",
             inset: 0,
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            zIndex: 0,
+            objectPosition: "center top",
             pointerEvents: "none",
           }}
         />
@@ -153,4 +93,3 @@ export default function ScrollVideoSection() {
     </section>
   );
 }
-
