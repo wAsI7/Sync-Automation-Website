@@ -1,0 +1,48 @@
+[33mc1d6bc8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m refactor(scroll-video): introduce reusable useScrollScrubVideo hook and full-width component
+[33md8a868f[m fix(scroll-video): production bounce + smooth scrub stabilization
+[33m26899ab[m Stabilize production bounce by pausing ScrollSmoother
+[33mc61f5c3[m Fix pinned video architecture and remove double spacing
+[33m8432e3f[m Fix pinned video architecture and remove double spacing
+[33m505e49f[m Reduce ScrollSmoother inertia inside pinned video section
+[33m091e2d3[m Fix ScrollTrigger pinType for ScrollSmoother compatibility VIDEO BOUNCE FIX 3
+[33mb55b65d[m Fix ScrollTrigger pinType for ScrollSmoother compatibility VIDEO BOUNCE FIX
+[33m9806428[m Fix ScrollTrigger pinType for ScrollSmoother compatibility Part 2
+[33ma13804e[m Fix ScrollTrigger pinType for ScrollSmoother compatibility
+[33m62ee300[m Add GPU isolation to fix video repaint in production
+[33m4714dde[m 1st Mar 12PM Stable Restored Apart from Video Scrolling Section
+[33m0d4a447[m Fix: Video decoder warm-up to resolve production black screen
+[33m062e5fe[m Fix: Disable ScrollSmoother effects to resolve production video black screen
+[33m69e5de2[m Fix video visibility with data-speed attribute
+[33md4ec952[m Revert "Fix video ScrollTrigger pinning"
+[33m4b336f9[m Fix video ScrollTrigger pinning
+[33m634e9e2[m Fix video stacking with isolation
+[33m9a7abfc[m Revert "Fix video z-index for production"
+[33mf184c27[m Fix video z-index for production
+[33ma9291ad[m Replace LFS video with direct file
+[33m9ec0675[m Add video error logging
+[33mc173949[m Add video and product updates
+[33ma1287e0[m Add video with LFS
+[33me292a7b[m Fix product images and reduce video section height
+[33m075cd1b[m sync before switching to mac
+[33m6b594d9[m Test Video Fix
+[33m37c5d31[m Test Video Fix
+[33me3325c1[m Test Video Fix
+[33m17b6a52[m Test Video Fix
+[33mca3312d[m Test Video Fix
+[33m7e8252c[m Video Add
+[33md301c23[m fix: production-safe scroll video metadata handling
+[33m5e10aaa[m Feb 27th Start Stable Version
+[33m05d10ee[m 26th Feb EOD
+[33m7fd3acc[m 26th Feb 5PM
+[33mb770e99[m 26th Feb 4PM
+[33m9548234[m 26th Feb 1PM
+[33md185d0f[m 26th Feb First half
+[33m163a26b[m First Draft Push
+[33m313bcca[m First Draft Done
+[33m3411fc8[m 1st and 2nd Section complete done
+[33m3ea43ea[m Meta Data Removed from the URL Sharing
+[33mc68d67e[m Sub Heading Replaced in Hero
+[33mfb6d341[m Update Next.js to secure version
+[33mf740c63[m Fix GSAP v3 syntax globally
+[33m41b173f[m Fix GSAP production build issue
+[33m240fd5a[m[33m ([m[1;31morigin/v0/wasi7-6edc89d2[m[33m)[m Sync Automation website

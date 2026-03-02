@@ -10,6 +10,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 import Wrapper from "@/layouts/wrapper";
 import SyncFooter from "@/components/layout/sync-footer";
 import ScrollVideoSection from "@/components/sections/scroll-video-section";
+import ScrollVideoSplit from "@/components/sections/ScrollVideoSplit";
 
 // Section 1 - Hero from home-4
 import HeroBannerFour from "@/components/hero-banner/hero-banner-four";
@@ -96,6 +97,14 @@ export default function CustomHomePage() {
 
             {/* SECTION 3 - Scroll Controlled Video */}
             <ScrollVideoSection />
+
+            {/* SECTION 3b - Scroll Video Split */}
+            <ScrollVideoSplit
+              videoSrc="/video/leaf-reveal.mp4"
+              heading="Smart Curtains"
+              description="Control your curtains automatically with intelligent scheduling and remote access."
+              layout="right"
+            />
 
             {/* SECTION 4 - Project cards from home-4 */}
             <section className="tp-projects-section sync-black-section">
