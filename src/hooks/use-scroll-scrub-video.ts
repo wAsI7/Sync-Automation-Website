@@ -56,7 +56,7 @@ export default function useScrollScrubVideo({
           console.log("SCROLL END:", end);
         },
         onUpdate: () => {
-          if (Math.abs(video.currentTime - proxy.time) > 0.033) {
+          if (Math.abs(video.currentTime - proxy.time) > 0.008) {
             video.currentTime = proxy.time;
           }
         },

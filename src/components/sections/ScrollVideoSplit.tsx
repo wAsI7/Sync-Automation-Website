@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import useScrollScrubVideo from "@/hooks/use-scroll-scrub-video";
+import useScrollTextReveal from "@/hooks/use-scroll-text-reveal";
 
 interface ScrollVideoSplitProps {
   videoSrc: string;
@@ -25,6 +26,7 @@ export default function ScrollVideoSplit({
 
   console.log("Calling useScrollScrubVideo");
   useScrollScrubVideo({ sectionRef, videoRef, scrollMultiplier });
+  useScrollTextReveal({ sectionRef, headingSelector: "h2", paragraphSelector: "p" });
 
   const textPanel = (
     <div
@@ -37,7 +39,7 @@ export default function ScrollVideoSplit({
         height: "100%",
       }}
     >
-      <h2 className="tp-section-title">{heading}</h2>
+      <h2 className="tp-section-title tp_text_invert">{heading}</h2>
       <p className="tp-section-desc">{description}</p>
     </div>
   );
