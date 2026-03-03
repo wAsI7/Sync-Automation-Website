@@ -98,18 +98,18 @@ export default function CustomHomePage() {
             {/* SECTION 3 - Scroll Controlled Video */}
             <ScrollVideoSection />
 
-            {/* SECTION 3b - Scroll Video Split */}
+            {/* SECTION 4 - Project cards from home-4 */}
+            <section className="tp-projects-section sync-black-section">
+              <ProjectFour />
+            </section>
+
+            {/* SECTION 4b - Scroll Video Split */}
             <ScrollVideoSplit
               videoSrc="/video/leaf-reveal.mp4"
               heading="Smart Curtains"
               description="Control your curtains automatically with intelligent scheduling and remote access."
               layout="right"
             />
-
-            {/* SECTION 4 - Project cards from home-4 */}
-            <section className="tp-projects-section sync-black-section">
-              <ProjectFour />
-            </section>
 
             {/* SECTION 6 - Service cards from home-3 */}
             <section className="tp-service-section">
