@@ -1,6 +1,7 @@
 import React from "react";
 // internal imports
 import { FirstBracket, FirstBracketTwo } from "../svg";
+import "./about-three.scss";
 
 export default function AboutThree() {
   return (
@@ -25,6 +26,14 @@ export default function AboutThree() {
             <p className="mb-0 tp_fade_bottom">
               Smart homes shouldn&apos;t feel complicated. Sync panels blend into architecture while giving you absolute control, lighting, climate, audio and security, all through interfaces designed for human touch. Invisible until you need it. Precise when you do.
             </p>
+          </div>
+
+          <div className="scroll-indicator">
+            <span className="scroll-text">SEE IT UNFOLD</span>
+            <div className="chevrons">
+              <span className="chevron"></span>
+              <span className="chevron"></span>
+            </div>
           </div>
         </div>
       </div>
