@@ -49,38 +49,38 @@ const service_data = [
   {
     id: 1,
     icon: sv_1,
-    title: "Website design",
-    subtitle: "You’re ready to take your business to higher ground.",
+    title: "Lorem Ipsum",
+    subtitle: "Consectetur adipiscing elit sed do eiusmod tempor incididunt.",
   },
   {
     id: 2,
     icon: sv_2,
-    title: "Web development",
-    subtitle: "You’re ready to take your business to higher ground.",
+    title: "Dolor Sit Amet",
+    subtitle: "Consectetur adipiscing elit sed do eiusmod tempor incididunt.",
   },
   {
     id: 3,
     icon: sv_3,
-    title: "UI/UX Design",
-    subtitle: "You’re ready to take your business to higher ground.",
+    title: "Sed Do Eiusmod",
+    subtitle: "Consectetur adipiscing elit sed do eiusmod tempor incididunt.",
   },
   {
     id: 4,
     icon: sv_4,
-    title: "Growth",
-    subtitle: "You’re ready to take your business to higher ground.",
+    title: "Tempor Incididunt",
+    subtitle: "Consectetur adipiscing elit sed do eiusmod tempor incididunt.",
   },
   {
     id: 5,
     icon: sv_2,
-    title: "App development",
-    subtitle: "You’re ready to take your business to higher ground.",
+    title: "Ut Labore Dolore",
+    subtitle: "Consectetur adipiscing elit sed do eiusmod tempor incididunt.",
   },
   {
     id: 6,
     icon: sv_4,
-    title: "Marketing",
-    subtitle: "You’re ready to take your business to higher ground.",
+    title: "Magna Aliqua",
+    subtitle: "Consectetur adipiscing elit sed do eiusmod tempor incididunt.",
   },
 ];
 export default function ServiceThree() {
@@ -96,8 +96,8 @@ export default function ServiceThree() {
             <div className="col-xl-9 col-lg-9 col-md-9">
               <div className="tp-service-4-title-box tp_fade_bottom">
                 <h4 className="tp-service-4-title">
-                  We work with select service providers in the disability sector
-                  to develop inclusive products tailored to their needs.
+                  Lorem ipsum dolor sit amet consectetur adipiscing elit sed do
+                  eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </h4>
               </div>
             </div>
@@ -134,7 +134,7 @@ export default function ServiceThree() {
                     <Link href="/service">{item.title}</Link>
                   </h4>
                   <p>{item.subtitle}</p>
-                  <Link className="tp-service-4-link" href="/service">
+                  <Link className="tp-service-4-link" href="#">
                     Read more
                   </Link>
                 </div>

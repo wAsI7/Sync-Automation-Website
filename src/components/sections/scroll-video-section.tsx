@@ -4,7 +4,11 @@ import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
-export default function ScrollVideoSection() {
+interface ScrollVideoSectionProps {
+  videoSrc?: string;
+}
+
+export default function ScrollVideoSection({ videoSrc = "/video/ambience-control.mp4" }: ScrollVideoSectionProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -67,7 +71,7 @@ export default function ScrollVideoSection() {
       <div style={{ height: "100vh", position: "relative" }}>
         <video
           ref={videoRef}
-          src="/video/ambience-control.mp4"
+          src={videoSrc}
           muted
           autoPlay
           playsInline

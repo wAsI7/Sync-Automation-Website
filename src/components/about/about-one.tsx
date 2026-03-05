@@ -15,8 +15,8 @@ const AboutOne = () => {
           <div className="col-xxl-8 col-xl-10">
             <div className="tp-about-2-title-box tp-btn-trigger tp-btn-bounce mb-70 text-start text-xl-center">
               <h2 className="tp-about-2-section-title">
-                Cooperation is possible within
-                various shapes and formats
+                Lorem ipsum dolor sit
+                amet consectetur adipiscing
               </h2>
             </div>
           </div>
@@ -29,19 +29,18 @@ const AboutOne = () => {
               </div>
               <div className="tp-about-2-thumb-inner">
                 <Image style={{width:"100%", height:"auto"}} width={221} height={278}  src={ab_2} alt="ab-img" />
-                <span className="tp-about-2-thumb-text">I’M A SUNGLASSES INFLUENCER</span>
+                <span className="tp-about-2-thumb-text">LOREM IPSUM DOLOR</span>
               </div>
             </div>
           </div>
           <div className="col-xl-5 col-lg-12 order-0 order-xl-1">
             <div className="tp-about-2-content">
-              <span>FOLLOW FOR THE BEST EYEWEAR INSPIRATION</span>
+              <span>CONSECTETUR ADIPISCING ELIT</span>
               <p className="mb-30">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
               </p>
               <p className="mb-0">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                do eiusmod tempor incididunt .!
+                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.
               </p>
             </div>
           </div>

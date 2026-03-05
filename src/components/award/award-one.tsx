@@ -109,15 +109,11 @@ const AwardOne = ({cls="pt-125 pb-125",abStyle=false}: IProps) => {
                 <div
                   key={item.id}
                   onMouseEnter={() => setActiveThumb(item.id)}
-                  className="tp-award-list-item d-flex align-items-center justify-content-between tp_fade_bottom"
+                  className="tp-award-list-item d-flex align-items-center justify-content-center tp_fade_bottom"
                   rel={`tp-award-list-thumb-${item.id}`}
                 >
-                  <div className="tp-award-list-content-left d-flex align-items-center">
-                    <span>{item.subtitle}</span>
+                  <div className="tp-award-list-content-center">
                     <p>{item.title}</p>
-                  </div>
-                  <div className="tp-award-list-content-right">
-                    <span>{item.date}</span>
                   </div>
                 </div>
               ))}

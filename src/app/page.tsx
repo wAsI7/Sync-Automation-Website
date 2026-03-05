@@ -15,9 +15,6 @@ import ScrollVideoSplit from "@/components/sections/ScrollVideoSplit";
 // Section 1 - Hero from home-4
 import HeroBannerFour from "@/components/hero-banner/hero-banner-four";
 
-// Section 3 - Cooperation from home-2
-import AboutOne from "@/components/about/about-one";
-
 // Section 4 - Horizontal scrolling image cards from home-4 (GalleryOne - beach/cube/figure)
 import GalleryOne from "@/components/gallery/gallery-one";
 
@@ -106,8 +103,8 @@ export default function CustomHomePage() {
             {/* SECTION 4b - Scroll Video Split */}
             <ScrollVideoSplit
               videoSrc="/video/leaf-reveal.mp4"
-              heading="Smart Curtains"
-              description="Control your curtains automatically with intelligent scheduling and remote access."
+              heading="Lorem Ipsum Dolor"
+              description="Consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud."
               layout="right"
             />
 
@@ -116,17 +113,15 @@ export default function CustomHomePage() {
               <ServiceThree />
             </section>
 
-            {/* SECTION 7 - Cooperation section from home-2 */}
-            <section className="tp-about-section">
-              <AboutOne />
-            </section>
+            {/* SECTION 6b - Scroll Controlled Video */}
+            <ScrollVideoSection videoSrc="/video/White_out.mp4" />
 
-            {/* SECTION 8 - Awards & Recognitions from home-1 */}
+            {/* SECTION 7 - Awards & Recognitions from home-1 */}
             <section className="tp-award-section">
               <AwardOne cls="pt-125 pb-125" />
             </section>
 
-            {/* SECTION 9 - Gallery heading */}
+            {/* SECTION 8 - Gallery heading */}
             <section
               className="pt-160 pb-0 position-relative"
               style={{ zIndex: 2 }}
@@ -143,7 +138,7 @@ export default function CustomHomePage() {
               </div>
             </section>
 
-            {/* SECTION 10 - Gallery section */}
+            {/* SECTION 9 - Gallery section */}
             <section className="tp-gallery-section pt-130 pb-130">
               <GalleryOne />
             </section>
