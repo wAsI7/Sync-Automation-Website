@@ -15,7 +15,7 @@ const project_data = [
     img_2: product_1,
     title: "Sync Display Panel",
     subtitle: "Intelligent climate & automation hub",
-    description: "Circular OLED display · Real-time temperature · Touch-sensitive controls",
+    description: "Circular OLED display\nReal-time temperature & display\nTouch-sensitive controls",
   },
   {
     id: 1,
@@ -23,7 +23,7 @@ const project_data = [
     img_2: product_2,
     title: "Sync Keypad Pro",
     subtitle: "Multi-zone control with customizable scenes",
-    description: "8-button tactile interface · AC, lighting, curtain control · Day/Night presets",
+    description: "8-button tactile interface\nAC, lighting & curtain control\nDay / Night presets",
   },
 ];
 
@@ -66,7 +66,9 @@ export default function ProjectFour({ style_2 = false }: IProps) {
                         {item.title}
                       </h4>
                       <p className="tp-project-3-subtitle">{item.subtitle}</p>
-                      <p className="tp-project-3-description">{item.description}</p>
+                      <p className="tp-project-3-description">
+                        {item.description.split('\n').join(' • ')}
+                      </p>
                     </div>
                     <div className="tp-project-3-border color-1 text-center">
                       <span></span>
