@@ -29,7 +29,7 @@ function ctaAnimation() {
 	
 		let mySplitText = new SplitText(".cta-text", { type: "words,chars" });
 		let chars = mySplitText.chars;
-    let endGradient: any = (chroma as any).scale(['#FFB55E', '#F25164', '#7F00D7', '#EC38BC', '#F25164']);
+    let endGradient: any = (chroma as any).scale(['#ffffff', '#e5e5e5', '#bfbfbf', '#f2f2f2', '#9e9e9e', '#ffffff']);
 		cta.to(chars, {
 			duration: 0.5,
 			scaleY: 0.6,
@@ -54,8 +54,8 @@ function ctaAnimation() {
 				return endGradient(i / arr.length).hex();
 			},
 			ease: "power1.out",
-			stagger: 0.03,
-			duration: 0.3
+			stagger: 0.04,
+			duration: 0.5
 		}, 0.5);
 		cta.to(chars, {
 			yPercent: 0,
@@ -65,8 +65,8 @@ function ctaAnimation() {
 		}, 0.7);
 		cta.to(chars, {
 			color: '#fff',
-			duration: 1.4,
-			stagger: 0.05
+			duration: 1.8,
+			stagger: 0.06
 		});
 	}
 };
