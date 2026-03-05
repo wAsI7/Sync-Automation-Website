@@ -10,20 +10,20 @@ import product_4 from "@/assets/img/home-03/portfolio/product-4.jpg";
 // product data
 const project_data = [
   {
+    id: 2,
+    img_1: product_3,
+    img_2: product_1,
+    title: "Sync Display Panel",
+    subtitle: "Intelligent climate & automation hub",
+    description: "Circular OLED display · Real-time temperature · Touch-sensitive controls",
+  },
+  {
     id: 1,
-    img_1: product_1,
+    img_1: product_4,
     img_2: product_2,
     title: "Sync Keypad Pro",
     subtitle: "Multi-zone control with customizable scenes",
     description: "8-button tactile interface · AC, lighting, curtain control · Day/Night presets",
-  },
-  {
-    id: 2,
-    img_1: product_3,
-    img_2: product_4,
-    title: "Sync Display Panel",
-    subtitle: "Intelligent climate & automation hub",
-    description: "Circular OLED display · Real-time temperature · Touch-sensitive controls",
   },
 ];
 

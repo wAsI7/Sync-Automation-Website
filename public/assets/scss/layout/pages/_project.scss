@@ -490,8 +490,9 @@
             width: 240px;
             height: 20px;
             border-radius: 100px;
-            background: linear-gradient(90deg, rgba(76, 73, 104, 0.70) 0%, rgba(115, 3, 192, 0.70) 33.33%, rgba(236, 56, 188, 0.70) 66.67%, rgba(253, 239, 249, 0.70) 100%);
+            background: linear-gradient(90deg, #4a4a4a 0%, #9a9a9a 35%, #e8e8e8 55%, #9a9a9a 75%, #4a4a4a 100%);
             display: inline-block;
+            margin-top: 32px;
         }
 
         &.color {
@@ -507,6 +508,25 @@
                 }
             }
         }
+    }
+
+    &-3-subtitle {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #ffffff;
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        margin-top: 24px;
+        margin-bottom: 16px;
+    }
+
+    &-3-description {
+        font-size: 12px;
+        line-height: 1.8;
+        color: #a8a8a8;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        margin-bottom: 0;
     }
 }
 .tp-reveal-line-2{
