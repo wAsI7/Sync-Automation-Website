@@ -2,6 +2,7 @@
 
 import HeroV2 from "@/components/v2/hero-v2/HeroV2";
 import ProductCarousel from "@/components/v2/carousel/ProductCarousel";
+import StickyBanner from "@/components/v2/sticky-banner/StickyBanner";
 
 export default function HomeV2() {
   return (
@@ -21,9 +22,8 @@ export default function HomeV2() {
       {/* ─────────────────────────────────────────────────────────────
           Section 3: StickyBanner
           Full-width immersive sticky scroll section
-          TODO: Replace with <StickyBanner /> component
       ───────────────────────────────────────────────────────────── */}
-      <section id="StickyBanner" className="min-h-screen w-full" />
+      <StickyBanner />
 
       {/* ─────────────────────────────────────────────────────────────
           Section 4: BentoGrid
