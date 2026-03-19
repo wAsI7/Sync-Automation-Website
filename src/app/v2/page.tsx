@@ -1,14 +1,15 @@
 "use client";
 
+import HeroV2 from "@/components/v2/hero-v2/HeroV2";
+
 export default function HomeV2() {
   return (
     <main className="bg-black text-white">
       {/* ─────────────────────────────────────────────────────────────
           Section 1: HeroV2
           Full-screen dark hero — above the fold entry point
-          TODO: Replace with <HeroV2 /> component
       ───────────────────────────────────────────────────────────── */}
-      <section id="HeroV2" className="min-h-screen w-full" />
+      <HeroV2 />
 
       {/* ─────────────────────────────────────────────────────────────
           Section 2: ProductCarousel
