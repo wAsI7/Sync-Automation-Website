@@ -1,6 +1,7 @@
 "use client";
 
 import HeroV2 from "@/components/v2/hero-v2/HeroV2";
+import ProductCarousel from "@/components/v2/carousel/ProductCarousel";
 
 export default function HomeV2() {
   return (
@@ -14,9 +15,8 @@ export default function HomeV2() {
       {/* ─────────────────────────────────────────────────────────────
           Section 2: ProductCarousel
           Interactive product + spec switcher
-          TODO: Replace with <ProductCarousel /> component
       ───────────────────────────────────────────────────────────── */}
-      <section id="ProductCarousel" className="min-h-screen w-full" />
+      <ProductCarousel />
 
       {/* ─────────────────────────────────────────────────────────────
           Section 3: StickyBanner
